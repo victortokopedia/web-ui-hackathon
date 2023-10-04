@@ -4,7 +4,7 @@
 version: '3'
 services:
   skipper-app:
-    image: $REGISTRY_SERVER/web-ui-2:$GIT_COMMIT
+    image: $REGISTRY_SERVER/web-ui-hackathon:$GIT_COMMIT
     restart: always
     volumes:
       - ${PWD}/.env:/code/.env

@@ -1,8 +1,8 @@
-# 🐧 lite-web-ui-2
+# 🐧 lite-web-ui-hackathon
 
 This is a web project bootstrapped with [create-skipper-app](https://github.com/tokopedia/skipper-web-framework/packages/1089406).
 
-![By Tokopedia](https://img.shields.io/badge/WPE-Tokopedia-brightgreen.svg) [![CodeQL](https://github.com/tokopedia/tokopedia-lite-web-ui-2/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/tokopedia/tokopedia-lite-web-ui-2/actions/workflows/codeql-analysis.yml)
+![By Tokopedia](https://img.shields.io/badge/WPE-Tokopedia-brightgreen.svg) [![CodeQL](https://github.com/tokopedia/tokopedia-lite-web-ui-hackathon/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/tokopedia/tokopedia-lite-web-ui-hackathon/actions/workflows/codeql-analysis.yml)
 ![Coverage](https://img.shields.io/badge/coverage-10%25-brightgreen)
 
 ## Getting Started

@@ -1,9 +1,9 @@
 {
-  "description": "Service lite-web-ui-2 by Skipper-Framework",
+  "description": "Service lite-web-ui-hackathon by Skipper-Framework",
   "app": [
     {
-      "name": "lite-web-ui-2",
-      "description": "Service lite-web-ui-2 by Skipper-Framework",
+      "name": "lite-web-ui-hackathon",
+      "description": "Service lite-web-ui-hackathon by Skipper-Framework",
       "owner": "dendi.sunardi@tokopedia.com",
       "slack_channel": "mobile-web-hub"
     }
@@ -11,6 +11,6 @@
   "directorate": "TECH",
   "last_update": "4/10/2023",
   "namespace": "tokopedia-lite",
-  "repository_name": "tokopedia-lite-web-ui-2",
+  "repository_name": "tokopedia-lite-web-ui-hackathon",
   "security_owner": "pradhana.indra@tokopedia.com"
 }

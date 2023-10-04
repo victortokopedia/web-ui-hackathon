@@ -33,9 +33,9 @@ runs:
     #   uses: actions/cache@v2
     #   with:
     #     path: ~/.pnpm-store
-    #     key: pnpm6-web-ui-2-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+    #     key: pnpm6-web-ui-hackathon-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
     #     restore-keys: |
-    #       pnpm6-web-ui-2-${{ runner.os }}-
+    #       pnpm6-web-ui-hackathon-${{ runner.os }}-
 
     - name: Setup pnpm
       uses: pnpm/action-setup@v2.2.3

@@ -1,7 +1,7 @@
 server {
     listen 80;
     server_name staging.tokopedia.com;
-    root /var/www/tokopedia-lite-web-ui-2/public;
+    root /var/www/tokopedia-lite-web-ui-hackathon/public;
 
     location ~* \.(json|xml|css|jpg|jpeg|svg|png|gif|txt|ico|ttf|woff|otf|eot) {
         try_files $uri $uri/ /;
