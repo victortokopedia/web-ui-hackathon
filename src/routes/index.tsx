@@ -2,6 +2,7 @@ import type { SkipperRouteEntry } from '@tokopedia/skipper/router';
 
 import DefaultLayout from '@/layouts/DefaultLayout';
 
+import MainLayout from '@/layouts/MainLayout';
 import Home from './Home/Lazy';
 
 const ROUTES: SkipperRouteEntry[] = [
@@ -12,7 +13,7 @@ const ROUTES: SkipperRouteEntry[] = [
         type: 'route',
         name: 'home',
         path: '/',
-        layout: [DefaultLayout],
+        layout: [DefaultLayout, MainLayout],
         component: Home,
       },
     ],

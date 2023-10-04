@@ -33,6 +33,9 @@ dependencies:
   '@log4js-node/logstashudp':
     specifier: 1.0.0
     version: 1.0.0
+  '@nest-ui/carousel':
+    specifier: ^1.1.0
+    version: 1.1.0(@emotion/react@11.10.4)(@nest-ui/core@1.6.1)(react-dom@18.2.0)(react@18.2.0)
   '@nest-ui/core':
     specifier: ^1.6.1
     version: 1.6.1(@emotion/react@11.10.4)(react-dom@18.2.0)(react@18.2.0)
@@ -3359,6 +3362,20 @@ packages:
       debug: 3.2.7
     transitivePeerDependencies:
       - supports-color
+
+  /@nest-ui/carousel@1.1.0(@emotion/react@11.10.4)(@nest-ui/core@1.6.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-xUoFFdbb2U033zWxZqQpM/xf/RakJghR9tdUEMGlt9K0Dwen+g9Kq6mzu6ec2XyrF0B+MCNUfpMLfaX+AbJUZA==}
+    peerDependencies:
+      '@emotion/react': ^11.10.4
+      '@nest-ui/core': ^1.6.0
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    dependencies:
+      '@emotion/react': 11.10.4(@babel/core@7.22.8)(@types/react@18.0.9)(react@18.2.0)
+      '@nest-ui/core': 1.6.1(@emotion/react@11.10.4)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /@nest-ui/core@1.6.1(@emotion/react@11.10.4)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-C6ccf/9th/MssDRWB5CUkJ6U/8TeMu6Bk7j5+KVqnXnBREhGVvGrMWTuZDggoVtpDWvgBnQkzGmzwo2sF/mzSQ==}

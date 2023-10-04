@@ -28,6 +28,7 @@
     "@fastify/http-proxy": "7.1.0",
     "@fastify/static": "5.0.1",
     "@log4js-node/logstashudp": "1.0.0",
+    "@nest-ui/carousel": "^1.1.0",
     "@nest-ui/core": "^1.6.1",
     "@nest-ui/icon": "^1.2.0",
     "@tokopedia/lite-csp": "^3.0.4",

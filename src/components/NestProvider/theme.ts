@@ -1,15 +1,11 @@
 import type { NestTheme } from '@nest-ui/core';
-import type { TableTheme } from '@nest-ui/table';
-import type { DatePickerTheme } from '@nest-ui/datepicker';
 import * as C from '@tokopedia/nest-color';
 
 const { addAlpha } = C;
 
 const pxToRem = (px: number) => px / 16 + 'rem';
 
-type NestCompleteTheme = NestTheme & TableTheme & DatePickerTheme;
-
-const defaultTokens: NestCompleteTheme = {
+const defaultTokens: NestTheme = {
   'base-breakpoints': [0, 768, 1024, 1280],
   'base-fontFamily': "'Open Sauce One', sans-serif",
   'base-fontSize': [pxToRem(14)],
@@ -251,6 +247,11 @@ const defaultTokens: NestCompleteTheme = {
   'ribbon[purple]-background': C.PN500,
   'ribbon[purple]>fold-color': C.PN700S,
 
+  'searchbar-lineHeight': [pxToRem(20)],
+  'searchbar-fontSize': [pxToRem(14)],
+  'searchbar>icon-size': [24],
+  'searchbar-padding': [`${pxToRem(7)} ${pxToRem(8)}`],
+  'searchbar-gap': [pxToRem(8)],
   'searchbar-background': C.NN0,
   'searchbar-borderColor': C.NN200,
   'searchbar-color': C.NN950,
@@ -413,7 +414,7 @@ const defaultTokens: NestCompleteTheme = {
   'typography[small]-lineHeight': [12 / 10],
 };
 
-const darkTokens: NestCompleteTheme = {
+const darkTokens: NestTheme = {
   'card-background': C.NN50,
   'card-borderColor': C.NN200,
   'card[disabled]-background': C.NN100,
