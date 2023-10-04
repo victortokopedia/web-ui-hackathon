@@ -1,77 +1,69 @@
-import { Fragment, useState } from 'react';
-import { Helmet } from '@tokopedia/skipper/head';
-import { useNavigate } from '@tokopedia/skipper/router';
+import { Breadcrumbs, Button, Card, Container, Grid, Image } from '@nest-ui/core';
+import { AddSmall } from '@nest-ui/icon';
 
-import type { SkipperComponentType } from '@tokopedia/skipper/router';
-
-import * as styles from './home.module.css';
-
-/**
- * @function Home
- */
-const Home: SkipperComponentType = () => {
-  const navigate = useNavigate();
-
-  const titleColors = ['#212121', '#0094CF', '#00AA5B', '#9342ED', '#F94D63', '#009F92', '#FF7F17'];
-  const [currentTitleColorIndex, setCurrentTitleColorIndex] = useState(0);
-
-  const handleTitleColor = () => {
-    setCurrentTitleColorIndex((currentTitleColorIndex + 1) % titleColors.length);
-  };
-
-  const currentTitleColor = titleColors[currentTitleColorIndex];
-
+const Home = () => {
   return (
-    <Fragment>
-      <Helmet>
-        <title>Home | Skipper Framework</title>
-      </Helmet>
-
-      <main className={styles.main}>
-        <div className={styles.wrapperTop}>
-          <p className={styles.cta}>
-            Getting started by editing{' '}
-            <code>
-              <strong>routes/Home/index.tsx</strong>
-            </code>
-          </p>
-          <div className={styles.wrapperLogo}>
-            <span>By</span>
-            <img src="/assets/logo.png" alt="Skipper Logo" width="150" />
-          </div>
-        </div>
-
-        <div className={styles.wrapperMiddle}>
-          <h1 className={styles.title} style={{ color: `${currentTitleColor}` }}>
-            Skipper Framework
-          </h1>
-          <p className={styles.desc}>
-            We recommended you to take a look at the{' '}
-            <a
-              className={styles.descLink}
-              href="https://tokopedia.atlassian.net/l/cp/xbZT4ni4"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Skipper Framework Documentation
-            </a>
-            , whether you are new or have previous experience with the framework.
-          </p>
-          <ul className={styles.menu}>
-            <li onClick={() => navigate('/about/us')}>About</li>
-            <li onClick={() => navigate('/blog')}>Blog</li>
-          </ul>
-        </div>
-
-        <div className={styles.wrapperBottom}>
-          <p className={styles.copyright}>Copyright © WPE Core Team 2023</p>
-          <button className={styles.wrapperCta} type="button" onClick={handleTitleColor}>
-            <img src="/assets/icon_ar_wand.svg" alt="Icon Ar Wand" />
-            Change Title Color
-          </button>
-        </div>
-      </main>
-    </Fragment>
+    <>
+      <div>
+        <Container>
+          <Breadcrumbs overflow={4}>
+            <Breadcrumbs.Item href="#">Home</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#">PC & Laptop</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#">Laptop</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#">Consumer Laptop</Breadcrumbs.Item>
+            <Breadcrumbs.Item as="h1">Apple Macbook Pro 2021 M1 Max 16 512GB</Breadcrumbs.Item>
+          </Breadcrumbs>
+          <Grid gutterX={40}>
+            <Grid.Col>
+              <Grid gutterX={40}>
+                <Grid.Col span="auto">
+                  <div css={{ width: 348 }}>
+                    <Image ratio="1:1" src="" alt="" />
+                  </div>
+                </Grid.Col>
+                <Grid.Col>
+                  <h1>Apple Macbook Pro 2021 M1 Max 16 512GB</h1>
+                  <Card css={{ padding: '1rem' }}>Product Detail</Card>
+                </Grid.Col>
+              </Grid>
+              <section>
+                <h2>ULASAN PEMBELI</h2>
+                <Card css={{ padding: '1rem' }}>Content</Card>
+              </section>
+              <section>
+                <h2>Diskusi</h2>
+                <Card css={{ padding: '1rem' }}>Content</Card>
+              </section>
+            </Grid.Col>
+            <Grid.Col span="auto">
+              <div css={{ width: 268, position: 'sticky', top: 0 }}>
+                <Card css={{ padding: '1rem' }}>
+                  <p>Atur jumlah dan catatan</p>
+                  <Button block icon={<AddSmall aria-label="Tambah" />} css={{ marginBottom: '.5rem' }}>
+                    Keranjang
+                  </Button>
+                  <Button block variant="ghost">
+                    Beli Langsung
+                  </Button>
+                </Card>
+              </div>
+            </Grid.Col>
+          </Grid>
+        </Container>
+      </div>
+      <section>
+        <Container>
+          <h2>Lainnya di toko ini</h2>
+          <Card css={{ padding: '1rem' }}>Content</Card>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <h2>Produk sponsor terkait</h2>
+          <Card css={{ padding: '1rem' }}>Content</Card>
+        </Container>
+      </section>
+    </>
   );
 };
 

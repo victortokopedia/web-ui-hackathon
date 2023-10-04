@@ -1,9 +1,7 @@
 import { StrictMode } from 'react';
 import { Helmet } from '@tokopedia/skipper/head';
-
 import type { AppComponentType } from '@tokopedia/skipper/app';
-
-import '@/styles/global.css';
+import NestProvider from '@/components/NestProvider';
 
 /**
  * @function App
@@ -14,7 +12,7 @@ const App: AppComponentType = props => {
     <StrictMode>
       <Helmet>
         <html lang="id" />
-        <title>Welcome to skipper framework</title>
+        <title>Tokopedia WebUI</title>
         <meta charSet="UTF-8" />
         <meta
           name="viewport"
@@ -22,7 +20,7 @@ const App: AppComponentType = props => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
-      {children}
+      <NestProvider>{children}</NestProvider>
     </StrictMode>
   );
 };

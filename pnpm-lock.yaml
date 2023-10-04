@@ -48,6 +48,9 @@ dependencies:
   '@tokopedia/lite-tracker':
     specifier: ^4.1.0
     version: 4.1.0(@tokopedia/lite-data-masking@3.1.0)(react@18.2.0)
+  '@tokopedia/nest-color':
+    specifier: ^0.1.0
+    version: 0.1.0
   '@tokopedia/skipper':
     specifier: 6.12.0
     version: 6.12.0(@fastify/cookie@6.0.0)(@fastify/cors@7.0.0)(@fastify/helmet@8.0.1)(@fastify/http-proxy@7.1.0)(@fastify/static@5.0.1)(@tokopedia/lite-csp@3.0.4)(@types/node@18.18.3)(fastify-plugin@3.0.0)(fastify@3.29.4)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.4)
@@ -4238,6 +4241,11 @@ packages:
   /@tokopedia/lite-validator@2.8.1:
     resolution: {integrity: sha512-hQTfLnz9bjBGUlCjNW82vw237nNY2r5M43JMEyO8vJbEtpj4HDrliUkJPrW8Ps4S5QvEsRsPRb8Bd1McO5JvFg==, tarball: https://npm.pkg.github.com/download/@tokopedia/lite-validator/2.8.1/1c2620d143eff8a6c42c4e7ac8bc73a96338d9f6}
     engines: {node: '>=14.17 <17', pnpm: '>=6.24 <8'}
+
+  /@tokopedia/nest-color@0.1.0:
+    resolution: {integrity: sha512-xsnf20mx/hxVEXXgS4GxPX+i2X6++E0TumOZz7I7PJ4MCAc2SeQLRnhcDiL4PXb4C7O+0TJQPC4NBXmMmuQ/rQ==, tarball: https://npm.pkg.github.com/download/@tokopedia/nest-color/0.1.0/d7ed05d7a0905e0b5605e03293efd6c55dd35916}
+    engines: {node: '>=14.17 <17', pnpm: '>=6.24 <8'}
+    dev: false
 
   /@tokopedia/skipper-babel@6.12.0:
     resolution: {integrity: sha512-kuSn1InTEzgPMUMiG+zfqfRmMEbh/hiQZZzvsOp6GHbieeVMsycJFgxg396ikQpOOpwxa1dIE2MeRHiG0Dha6w==, tarball: https://npm.pkg.github.com/download/@tokopedia/skipper-babel/6.12.0/ce290f1436b873113068b2bf8a31de746a452adc}
