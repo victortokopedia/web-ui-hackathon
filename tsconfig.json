@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "plugins": [
       {
         "name": "typescript-plugin-css-modules",
