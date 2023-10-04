@@ -1,77 +1,86 @@
-import { Fragment, useState } from 'react';
-import { Helmet } from '@tokopedia/skipper/head';
-import { useNavigate } from '@tokopedia/skipper/router';
+import { Breadcrumbs, Button, Card, Container, Divider, Grid, Image, Typography } from '@nest-ui/core';
+import { AddSmall } from '@nest-ui/icon';
 
-import type { SkipperComponentType } from '@tokopedia/skipper/router';
-
-import * as styles from './home.module.css';
-
-/**
- * @function Home
- */
-const Home: SkipperComponentType = () => {
-  const navigate = useNavigate();
-
-  const titleColors = ['#212121', '#0094CF', '#00AA5B', '#9342ED', '#F94D63', '#009F92', '#FF7F17'];
-  const [currentTitleColorIndex, setCurrentTitleColorIndex] = useState(0);
-
-  const handleTitleColor = () => {
-    setCurrentTitleColorIndex((currentTitleColorIndex + 1) % titleColors.length);
-  };
-
-  const currentTitleColor = titleColors[currentTitleColorIndex];
-
+const Home = () => {
   return (
-    <Fragment>
-      <Helmet>
-        <title>Home | Skipper Framework</title>
-      </Helmet>
-
-      <main className={styles.main}>
-        <div className={styles.wrapperTop}>
-          <p className={styles.cta}>
-            Getting started by editing{' '}
-            <code>
-              <strong>routes/Home/index.tsx</strong>
-            </code>
-          </p>
-          <div className={styles.wrapperLogo}>
-            <span>By</span>
-            <img src="/assets/logo.png" alt="Skipper Logo" width="150" />
-          </div>
-        </div>
-
-        <div className={styles.wrapperMiddle}>
-          <h1 className={styles.title} style={{ color: `${currentTitleColor}` }}>
-            Skipper Framework
-          </h1>
-          <p className={styles.desc}>
-            We recommended you to take a look at the{' '}
-            <a
-              className={styles.descLink}
-              href="https://tokopedia.atlassian.net/l/cp/xbZT4ni4"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Skipper Framework Documentation
-            </a>
-            , whether you are new or have previous experience with the framework.
-          </p>
-          <ul className={styles.menu}>
-            <li onClick={() => navigate('/about/us')}>About</li>
-            <li onClick={() => navigate('/blog')}>Blog</li>
-          </ul>
-        </div>
-
-        <div className={styles.wrapperBottom}>
-          <p className={styles.copyright}>Copyright © WPE Core Team 2023</p>
-          <button className={styles.wrapperCta} type="button" onClick={handleTitleColor}>
-            <img src="/assets/icon_ar_wand.svg" alt="Icon Ar Wand" />
-            Change Title Color
-          </button>
-        </div>
-      </main>
-    </Fragment>
+    <>
+      <div>
+        <Container>
+          <Breadcrumbs overflow={4} css={{ marginBottom: '1rem' }}>
+            <Breadcrumbs.Item href="#">Home</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#">PC & Laptop</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#">Laptop</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#">Consumer Laptop</Breadcrumbs.Item>
+            <Breadcrumbs.Item>Apple Macbook Pro 2021 M1 Max 16 512GB</Breadcrumbs.Item>
+          </Breadcrumbs>
+          <Grid gutterX={40}>
+            <Grid.Col>
+              <Grid gutterX={40}>
+                <Grid.Col span="auto">
+                  <div css={{ width: 348 }}>
+                    <Image ratio="1:1" src="" alt="" />
+                  </div>
+                </Grid.Col>
+                <Grid.Col>
+                  <Typography as="h1" variant="heading6">
+                    Apple Macbook Pro 2021 M1 Max 16 512GB
+                  </Typography>
+                  <Card css={{ padding: '1rem' }}>Product Detail</Card>
+                </Grid.Col>
+              </Grid>
+              <Divider css={{ margin: '1rem 0 4rem' }} />
+              <section>
+                <Typography as="h2" variant="display1" css={{ margin: '0 0 1.25rem' }}>
+                  <strong>ULASAN PEMBELI</strong>
+                </Typography>
+                <Card css={{ padding: '1rem' }}>Content</Card>
+              </section>
+              <section>
+                <Typography as="h2" variant="Display1">
+                  <strong>Diskusi (2)</strong>
+                  <Typography as="span" variant="paragraph2" css={{ display: 'block', marginTop: '.5rem' }}>
+                    Apple Macbook Pro 2021 M1 Max 16 512GB
+                  </Typography>
+                </Typography>
+                <Card css={{ padding: '1rem' }}>Content</Card>
+              </section>
+              <Divider css={{ margin: '1rem 0 0' }} />
+            </Grid.Col>
+            <Grid.Col span="auto">
+              <div css={{ width: 268, position: 'sticky', top: 0 }}>
+                <Card css={{ padding: '1rem' }}>
+                  <Typography as="h3" variant="display1" css={{ margin: '0 0 1.25rem' }}>
+                    <strong>Atur jumlah dan catatan</strong>
+                  </Typography>
+                  <Button block icon={<AddSmall aria-label="Tambah" />} css={{ marginBottom: '.5rem' }}>
+                    Keranjang
+                  </Button>
+                  <Button block variant="ghost">
+                    Beli Langsung
+                  </Button>
+                </Card>
+              </div>
+            </Grid.Col>
+          </Grid>
+        </Container>
+      </div>
+      <section>
+        <Container>
+          <Typography as="h2" variant="heading4">
+            Lainnya di toko ini
+          </Typography>
+          <Card css={{ padding: '1rem' }}>Content</Card>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <Typography as="h2" variant="heading4">
+            Produk sponsor terkait
+          </Typography>
+          <Card css={{ padding: '1rem' }}>Content</Card>
+        </Container>
+      </section>
+    </>
   );
 };
 
