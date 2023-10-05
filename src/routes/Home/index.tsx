@@ -195,7 +195,7 @@ const Home = () => {
           <Typography as="h2" variant="heading4">
             Lainnya di toko ini
           </Typography>
-          <Recommendation />
+          <Recommendation source="lainnya" />
         </Container>
       </section>
       <section>
@@ -203,7 +203,7 @@ const Home = () => {
           <Typography as="h2" variant="heading4">
             Produk sponsor terkait
           </Typography>
-          <Card css={{ padding: '1rem' }}>Content</Card>
+          <Recommendation source="product sponsor" />
         </Container>
       </section>
     </>
