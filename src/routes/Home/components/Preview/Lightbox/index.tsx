@@ -6,7 +6,8 @@ import { ChevronLeft, ChevronRight, Close } from '@nest-ui/icon';
 import { GN600, NN0 } from '@tokopedia/nest-color';
 import type { MouseEvent } from 'react';
 import { useState } from 'react';
-import { cssCarouselNav, cssModalWrapper } from './style';
+import Modal from '@/components/Modal';
+import { cssCarouselNav } from './style';
 
 const sources = [
   'https://images.tokopedia.net/img/cache/900/VqbcmM/2023/1/24/02a05602-a22b-4008-823b-0f785345c69e.jpg',
@@ -29,26 +30,7 @@ const Lightbox = () => {
   };
 
   return (
-    // @ts-expect-error
-    <div id="preview-image" popover="" css={cssModalWrapper}>
-      <Grid align="middle" css={{ marginBottom: '1rem' }}>
-        <Grid.Col>
-          <Typography as="div" variant="heading5">
-            Gundam Fix Figuration Metal Composite/GFF Metal Composite Wing Zero EW
-          </Typography>
-        </Grid.Col>
-        <Grid.Col span="auto">
-          <Button
-            size="small"
-            variant="text"
-            icon={<Close />}
-            color="alternate"
-            // @ts-expect-error
-            popovertarget="preview-image"
-            popovertargetaction="hide"
-          />
-        </Grid.Col>
-      </Grid>
+    <Modal id="preview-image" modalTitle="Gundam Fix Figuration Metal Composite/GFF Metal Composite Wing Zero EW">
       <Grid gutterX="1.5rem">
         <Grid.Col span="auto">
           <div css={{ width: 740, position: 'relative' }}>
@@ -100,7 +82,7 @@ const Lightbox = () => {
           </Grid>
         </Grid.Col>
       </Grid>
-    </div>
+    </Modal>
   );
 };
 
