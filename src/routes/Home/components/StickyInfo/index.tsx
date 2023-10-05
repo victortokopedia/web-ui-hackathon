@@ -18,10 +18,18 @@ const StickyInfo = () => {
           </Grid.Col>
           <Grid.Col>
             <Tabs css={{ marginBottom: 0 }} variant="equal">
-              <Tabs.Tab>Detail Produk</Tabs.Tab>
-              <Tabs.Tab>Ulasan</Tabs.Tab>
-              <Tabs.Tab>Diskusi</Tabs.Tab>
-              <Tabs.Tab>Rekomendasi</Tabs.Tab>
+              <Tabs.Tab as="a" href="#detailproduk">
+                Detail Produk
+              </Tabs.Tab>
+              <Tabs.Tab as="a" href="#ulasan">
+                Ulasan
+              </Tabs.Tab>
+              <Tabs.Tab as="a" href="#diskusi">
+                Diskusi
+              </Tabs.Tab>
+              <Tabs.Tab as="a" href="#rekomendasi">
+                Rekomendasi
+              </Tabs.Tab>
             </Tabs>
           </Grid.Col>
           <Grid.Col span="auto">

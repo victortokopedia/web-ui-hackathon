@@ -100,7 +100,7 @@ const Home = () => {
           </Grid>
         </Container>
       </div>
-      <section>
+      <section css={{ marginTop: '2rem' }}>
         <Container>
           <Typography as="h2" variant="heading4">
             Lainnya di toko ini
@@ -108,7 +108,7 @@ const Home = () => {
           <Recommendation source="lainnya" />
         </Container>
       </section>
-      <section>
+      <section css={{ marginTop: '3rem' }}>
         <Container>
           <Typography as="h2" variant="heading4">
             Produk sponsor terkait

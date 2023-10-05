@@ -10,7 +10,7 @@ const OPTIONS = [
 
 const Review = () => {
   return (
-    <section>
+    <section id="ulasan" css={{ scrollMarginTop: 200 }}>
       <Typography as="h2" variant="display1" css={{ margin: '0 0 1.25rem' }}>
         <strong>ULASAN PEMBELI</strong>
       </Typography>
