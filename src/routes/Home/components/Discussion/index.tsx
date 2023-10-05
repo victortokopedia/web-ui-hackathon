@@ -1,6 +1,5 @@
-import { Grid, Typography, Button } from '@nest-ui/core';
+import { Grid, Typography, Button, Card } from '@nest-ui/core';
 import { DiscussionFilled } from '@nest-ui/icon';
-import { NN300 } from '@tokopedia/nest-color';
 
 const Discussion = () => {
   return (
@@ -11,17 +10,19 @@ const Discussion = () => {
           Gundam Fix Figuration Metal Composite/GFF Metal Composite Wing Zero EW
         </Typography>
       </Typography>
-      <Grid css={{ border: `1px solid ${NN300}`, borderRadius: 8, padding: 16 }}>
-        <Grid.Col span="auto" alignSelf="middle">
-          <DiscussionFilled />
-        </Grid.Col>
-        <Grid.Col alignSelf="middle">
-          <Typography>Ada pertanyaan? Diskusikan dengan penjual atau pengguna lain</Typography>
-        </Grid.Col>
-        <Grid.Col span="auto" alignSelf="middle">
-          <Button>Tulis Pertanyaan</Button>
-        </Grid.Col>
-      </Grid>
+      <Card css={{ padding: '1rem' }}>
+        <Grid>
+          <Grid.Col span="auto" alignSelf="middle">
+            <DiscussionFilled />
+          </Grid.Col>
+          <Grid.Col alignSelf="middle">
+            <Typography>Ada pertanyaan? Diskusikan dengan penjual atau pengguna lain</Typography>
+          </Grid.Col>
+          <Grid.Col span="auto" alignSelf="middle">
+            <Button>Tulis Pertanyaan</Button>
+          </Grid.Col>
+        </Grid>
+      </Card>
     </section>
   );
 };

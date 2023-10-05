@@ -1,47 +1,33 @@
 import { useState } from 'react';
-import {
-  Breadcrumbs,
-  Button,
-  Card,
-  Container,
-  Divider,
-  Grid,
-  Image,
-  Typography,
-  Tabs,
-  TabPanels,
-  Label,
-} from '@nest-ui/core';
 import { GN500, NN300, NN600, YN300 } from '@tokopedia/nest-color';
-import { AddSmall, StarFilled, BadgePmproFilled, Star, Clock } from '@nest-ui/icon';
+import { StarFilled, BadgePmproFilled, Star, Clock } from '@nest-ui/icon';
+import { Card, Container, Divider, Grid, Typography, Label, Tabs, TabPanels, Button } from '@nest-ui/core';
 import Shipping from './components/Shipping';
 import Deals from './components/Deals';
 import PurchaseInApp from './components/PurchaseInApp';
 import Report from './components/Report';
 import Review from './components/Review';
 import Discussion from './components/Discussion';
+import Breadcrumbs from './components/Breadcrumbs';
+import Preview from './components/Preview';
+import Sidebar from './components/Sidebar';
+import StickyInfo from './components/StickyInfo';
+import Recommendation from './components/Recommendation';
 
 const Home = () => {
   const [activeKey, setActiveKey] = useState<string>('#detail');
 
   return (
     <>
+      <StickyInfo />
       <div>
         <Container>
-          <Breadcrumbs overflow={4} css={{ marginBottom: '1rem' }}>
-            <Breadcrumbs.Item href="#">Home</Breadcrumbs.Item>
-            <Breadcrumbs.Item href="#">PC & Laptop</Breadcrumbs.Item>
-            <Breadcrumbs.Item href="#">Laptop</Breadcrumbs.Item>
-            <Breadcrumbs.Item href="#">Consumer Laptop</Breadcrumbs.Item>
-            <Breadcrumbs.Item>Apple Macbook Pro 2021 M1 Max 16 512GB</Breadcrumbs.Item>
-          </Breadcrumbs>
+          <Breadcrumbs />
           <Grid gutterX={40}>
             <Grid.Col>
               <Grid gutterX={40}>
                 <Grid.Col span="auto">
-                  <div css={{ width: 348 }}>
-                    <Image ratio="1:1" src="" alt="" />
-                  </div>
+                  <Preview />
                 </Grid.Col>
                 <Grid.Col>
                   <Typography as="h1" variant="heading6" css={{ margin: '0 0 4px' }}>
@@ -99,11 +85,11 @@ const Home = () => {
                       <ul css={{ listStyle: 'none', padding: 0, margin: 0 }}>
                         <li css={{ marginBottom: 16 }}>
                           <Typography as="p" css={{ margin: 0 }}>
-                            <strong>JADWAL PENGIRIMAN PEMESANAN</strong>
+                            <b>JADWAL PENGIRIMAN PEMESANAN</b>
                           </Typography>
                           <Typography variant="paragraph3" css={{ color: NN600 }}>
-                            <strong>Senin - Jumat:</strong> Pemesanan Gojek, Grab instan sampai jam 4.30 pm, lebih dari
-                            itu akan dikirim besok...
+                            <b>Senin - Jumat:</b> Pemesanan Gojek, Grab instan sampai jam 4.30 pm, lebih dari itu akan
+                            dikirim besok...
                             <Typography as="a" variant="paragraph3" css={{ color: GN500, fontWeight: 'bold' }}>
                               Selengkapnya
                             </Typography>
@@ -111,7 +97,7 @@ const Home = () => {
                         </li>
                         <li css={{ marginBottom: 16 }}>
                           <Typography as="p" css={{ margin: 0 }}>
-                            <strong>Ketentuan Pengiriman (Go-Send, Grab & JNE) & Ketentuan Dropshipper</strong>
+                            <b>Ketentuan Pengiriman (Go-Send, Grab & JNE) & Ketentuan Dropshipper</b>
                           </Typography>
                           <Typography variant="paragraph3" css={{ color: NN600 }}>
                             Ketentuan Pengiriman (Go-Send, Grab & JNE) & Ketentuan DropshipperDear Customer yang kami
@@ -199,19 +185,7 @@ const Home = () => {
               <Divider css={{ margin: '1rem 0 0' }} />
             </Grid.Col>
             <Grid.Col span="auto">
-              <div css={{ width: 268, position: 'sticky', top: 0 }}>
-                <Card css={{ padding: '1rem' }}>
-                  <Typography as="h3" variant="display1" css={{ margin: '0 0 1.25rem' }}>
-                    <strong>Atur jumlah dan catatan</strong>
-                  </Typography>
-                  <Button block icon={<AddSmall aria-label="Tambah" />} css={{ marginBottom: '.5rem' }}>
-                    Keranjang
-                  </Button>
-                  <Button block variant="ghost">
-                    Beli Langsung
-                  </Button>
-                </Card>
-              </div>
+              <Sidebar />
             </Grid.Col>
           </Grid>
         </Container>
@@ -221,7 +195,7 @@ const Home = () => {
           <Typography as="h2" variant="heading4">
             Lainnya di toko ini
           </Typography>
-          <Card css={{ padding: '1rem' }}>Content</Card>
+          <Recommendation />
         </Container>
       </section>
       <section>
