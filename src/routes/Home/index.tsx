@@ -12,6 +12,7 @@ import Breadcrumbs from './components/Breadcrumbs';
 import Preview from './components/Preview';
 import Sidebar from './components/Sidebar';
 import StickyInfo from './components/StickyInfo';
+import Recommendation from './components/Recommendation';
 
 const Home = () => {
   const [activeKey, setActiveKey] = useState<string>('#detail');
@@ -84,11 +85,11 @@ const Home = () => {
                       <ul css={{ listStyle: 'none', padding: 0, margin: 0 }}>
                         <li css={{ marginBottom: 16 }}>
                           <Typography as="p" css={{ margin: 0 }}>
-                            <strong>JADWAL PENGIRIMAN PEMESANAN</strong>
+                            <b>JADWAL PENGIRIMAN PEMESANAN</b>
                           </Typography>
                           <Typography variant="paragraph3" css={{ color: NN600 }}>
-                            <strong>Senin - Jumat:</strong> Pemesanan Gojek, Grab instan sampai jam 4.30 pm, lebih dari
-                            itu akan dikirim besok...
+                            <b>Senin - Jumat:</b> Pemesanan Gojek, Grab instan sampai jam 4.30 pm, lebih dari itu akan
+                            dikirim besok...
                             <Typography as="a" variant="paragraph3" css={{ color: GN500, fontWeight: 'bold' }}>
                               Selengkapnya
                             </Typography>
@@ -96,7 +97,7 @@ const Home = () => {
                         </li>
                         <li css={{ marginBottom: 16 }}>
                           <Typography as="p" css={{ margin: 0 }}>
-                            <strong>Ketentuan Pengiriman (Go-Send, Grab & JNE) & Ketentuan Dropshipper</strong>
+                            <b>Ketentuan Pengiriman (Go-Send, Grab & JNE) & Ketentuan Dropshipper</b>
                           </Typography>
                           <Typography variant="paragraph3" css={{ color: NN600 }}>
                             Ketentuan Pengiriman (Go-Send, Grab & JNE) & Ketentuan DropshipperDear Customer yang kami
@@ -194,7 +195,7 @@ const Home = () => {
           <Typography as="h2" variant="heading4">
             Lainnya di toko ini
           </Typography>
-          <Card css={{ padding: '1rem' }}>Content</Card>
+          <Recommendation />
         </Container>
       </section>
       <section>

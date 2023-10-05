@@ -480,8 +480,6 @@ const newFace: NestTheme = {
   'chip[large]>image-borderRadius': [0],
   'chip[large]>image-margin': ['-1px -1px -1px -12px'],
 
-  'inputgroup-borderRadius': [12], //@TODO
-  'inputgroup-paddingX': [12],
   'image-borderRadius': [12],
 
   'label-borderRadius': [8],
