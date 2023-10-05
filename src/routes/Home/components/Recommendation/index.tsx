@@ -213,10 +213,12 @@ const ProductSponsor: ProductCardProps[] = [
 
 const Recommendation = ({ source }: { source: string }) => {
   const data = source === 'lainnya' ? products : ProductSponsor;
+  const span = source === 'lainnya' ? 4 : 2;
+
   return (
     <Grid align="stretch" gutterX="1rem" gutterY="1rem">
       {data.map(product => (
-        <Grid.Col span={2} key={product.id}>
+        <Grid.Col span={span} key={product.id}>
           <ProductCard {...product} />
         </Grid.Col>
       ))}

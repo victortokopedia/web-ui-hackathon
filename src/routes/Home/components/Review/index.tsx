@@ -1,4 +1,4 @@
-import { Grid, Typography, Select, Image, Accordion } from '@nest-ui/core';
+import { Grid, Typography, Select, Image } from '@nest-ui/core';
 import { StarFilled, Information, MenuKebabVertical, ThumbFilled, ChevronDown } from '@nest-ui/icon';
 import { GN500, NN600, YN300, NN100, NN700 } from '@tokopedia/nest-color';
 
@@ -171,7 +171,6 @@ const Review = () => {
               <Image
                 edge="circle"
                 width={32}
-                height={32}
                 alt="logo user"
                 src="https://images.tokopedia.net/img/cache/100-square/default_v3-usrnophoto.png.webp?ect=4g"
               />
