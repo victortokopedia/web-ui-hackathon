@@ -1,6 +1,21 @@
-import { Card, Image, Label, Typography } from '@nest-ui/core';
-import { Star } from '@nest-ui/icon';
-import { YN500 } from '@tokopedia/nest-color';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { Card, Image, Label } from '@nest-ui/core';
+import { BadgePmproFilled, StarFilled } from '@nest-ui/icon';
+import { YN300 } from '@tokopedia/nest-color';
+import { useState } from 'react';
+import { flushSync } from 'react-dom';
+import {
+  cssBadge,
+  cssContainer,
+  cssGrid,
+  cssImgWrapper,
+  cssPrice,
+  cssProductInfo,
+  cssProductName,
+  cssRating,
+  cssRatingStar,
+  cssShopInfo,
+} from './style';
 
 export interface ProductCardProps {
   id?: number;
@@ -16,29 +31,46 @@ export interface ProductCardProps {
 
 const ProductCard = (props: ProductCardProps) => {
   const { id, imgUrl, productName, price, cashback, location, shopName, rating, raterCount } = props;
+
+  const [showShop, setShowShop] = useState(false);
+
+  const handleHover = () => {
+    setShowShop(true);
+  };
+
+  const handleBlur = () => {
+    setShowShop(false);
+  };
+
   return (
-    <Card data-id={id} css={{ minHeight: '100%' }}>
-      <div>
-        <div>
-          <Image ratio="1:1" src={imgUrl} />
+    <div data-id={id} css={cssContainer}>
+      <Card css={{ height: '100%' }} onMouseEnter={handleHover} onMouseLeave={handleBlur}>
+        <div css={cssGrid}>
+          <div css={cssImgWrapper}>
+            <Image ratio="1:1" src={imgUrl} />
+          </div>
+          <div css={cssProductInfo}>
+            <div css={cssProductName}>{productName}</div>
+            <div css={cssPrice}>{price}</div>
+            <div css={{ marginBottom: '.25rem' }}>{cashback && <Label>{cashback}</Label>}</div>
+            {location && shopName && (
+              <div css={cssShopInfo}>
+                <BadgePmproFilled css={cssBadge} />
+                <span>{showShop ? location : shopName}</span>
+              </div>
+            )}
+            {raterCount && rating ? (
+              <div css={cssRating}>
+                {[...Array(Math.floor(rating)).keys()].map(each => (
+                  <StarFilled size={12} css={cssRatingStar} key={each} color={YN300} />
+                ))}
+                <span>&nbsp;({raterCount})</span>
+              </div>
+            ) : null}
+          </div>
         </div>
-        <div>
-          <Typography as="div">{productName}</Typography>
-          <Typography as="div">{price}</Typography>
-          <div>{cashback && <Label>{cashback}</Label>}</div>
-          <Typography as="div">{location}</Typography>
-          <Typography as="div">{shopName}</Typography>
-          {raterCount && rating ? (
-            <div>
-              {[...Array(Math.floor(rating)).keys()].map(each => (
-                <Star key={each} color={YN500} />
-              ))}
-              &ensp; ({raterCount})
-            </div>
-          ) : null}
-        </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 };
 
