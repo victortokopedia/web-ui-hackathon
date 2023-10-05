@@ -3,7 +3,6 @@ import { Card, Image, Label } from '@nest-ui/core';
 import { BadgePmproFilled, StarFilled } from '@nest-ui/icon';
 import { YN300 } from '@tokopedia/nest-color';
 import { useState } from 'react';
-import { flushSync } from 'react-dom';
 import {
   cssBadge,
   cssContainer,
@@ -54,10 +53,12 @@ const ProductCard = (props: ProductCardProps) => {
             <div css={cssPrice}>{price}</div>
             <div css={{ marginBottom: '.25rem' }}>{cashback && <Label>{cashback}</Label>}</div>
             {location && shopName && (
-              <div css={cssShopInfo}>
-                <BadgePmproFilled css={cssBadge} />
-                <span>{showShop ? location : shopName}</span>
-              </div>
+              <>
+                <div css={cssShopInfo}>
+                  <BadgePmproFilled css={cssBadge} />
+                  <span>{showShop ? location : shopName}</span>
+                </div>
+              </>
             )}
             {raterCount && rating ? (
               <div css={cssRating}>
