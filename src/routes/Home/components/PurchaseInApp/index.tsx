@@ -20,13 +20,13 @@ const PurchaseInApp = () => {
           <Typography>Scan QR-nya untuk lihat barang ini di aplikasi Tokopedia. Bebas ongkir, lho~</Typography>
         </Grid.Col>
         <Grid.Col span="auto">
-          <Button size="small" variant="ghost" color="alternate" id="btn" popover="popoverContent">
+          <Button size="small" variant="ghost" color="alternate" id="btn" popovertarget="popoverContent">
             <QrCode size={16} />
             Scan QR
           </Button>
         </Grid.Col>
       </Grid>
-      <div id="popoverContent" css={modalQRWrapper}>
+      <div popover="" id="popoverContent" css={modalQRWrapper}>
         <Button variant="text" css={buttonClose}>
           <Close color={NN600} />
         </Button>
