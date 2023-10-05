@@ -1,11 +1,19 @@
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import { NN0, NN200 } from '@tokopedia/nest-color';
+
+const fadeIn = keyframes({
+  to: { opacity: 1 },
+});
 
 export const cssFooter = css({
   marginTop: 50,
   backgroundColor: NN0,
   borderTop: `1px solid ${NN200}`,
   padding: '32px 0',
+  opacity: 0,
+  animation: `${fadeIn} linear both`,
+  animationTimeline: 'view(block)',
+  animationRange: 'cover 0 contain 0',
 });
 
 export const cssFooterContent = css({
