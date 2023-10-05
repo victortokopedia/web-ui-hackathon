@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { GN500, NN300, NN600, YN300 } from '@tokopedia/nest-color';
 import { StarFilled } from '@nest-ui/icon';
-import { Divider, Typography, Label, Tabs, TabPanels } from '@nest-ui/core';
+import { Divider, Typography, Label, Tabs } from '@nest-ui/core';
 import { flushSync } from 'react-dom';
 import { Global } from '@emotion/react';
 
@@ -38,6 +38,17 @@ const LabelCashback = () => {
 const ProductDetails = () => {
   const [activeKey, setActiveKey] = useState<string>('#detail');
 
+  const handleTabClick = (key: string) => {
+    if ('startViewTransition' in document) {
+      // @ts-expect-error
+      document.startViewTransition(() => {
+        flushSync(() => {
+          setActiveKey(key);
+        });
+      });
+    } else setActiveKey(key);
+  };
+
   return (
     <>
       <Typography as="h1" variant="heading6" css={{ margin: '0 0 4px' }}>
@@ -61,13 +72,26 @@ const ProductDetails = () => {
         <Typography css={{ color: NN300, textDecoration: 'line-through', marginLeft: 4 }}>Rp13.500.000</Typography>
       </div>
       <Divider />
-      <Tabs activeKey={activeKey} onTabClick={setActiveKey}>
+      <Tabs activeKey={activeKey} onTabClick={handleTabClick}>
         <Tabs.Tab key="#detail">Detail</Tabs.Tab>
         <Tabs.Tab key="#info-penting">Info Penting</Tabs.Tab>
       </Tabs>
       <Divider />
-      <TabPanels activeKey={activeKey}>
-        <TabPanels.Panel key="#detail" css={{ padding: '1rem 0' }}>
+      <Global
+        style={{
+          '::view-transition-group(tabcontent)': {
+            animationDuration: '0.25s',
+          },
+        }}
+      />
+      <div css={{ 'view-transition-name': 'tabcontent' }}>
+        <div
+          key="#detail"
+          css={{
+            padding: '1rem 0',
+            display: activeKey === '#detail' ? 'block' : 'none',
+          }}
+        >
           <ul css={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li>
               <Typography css={{ color: NN600, marginRight: 2 }}>Kondisi:</Typography>
@@ -88,8 +112,14 @@ const ProductDetails = () => {
             Original Bandai Japan Version Kondisi Open For Check Only Gundam Fix Figuration Metal Composite/GFF Metal
             Composite Wing Zero Ew Very rare
           </Typography>
-        </TabPanels.Panel>
-        <TabPanels.Panel key="#info-penting" css={{ padding: '1rem 0' }}>
+        </div>
+        <div
+          key="#info-penting"
+          css={{
+            padding: '1rem 0',
+            display: activeKey === '#info-penting' ? 'block' : 'none',
+          }}
+        >
           <ul css={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li css={{ marginBottom: 16 }}>
               <Typography as="p" css={{ margin: 0 }}>
@@ -125,8 +155,8 @@ const ProductDetails = () => {
               </Typography>
             </li>
           </ul>
-        </TabPanels.Panel>
-      </TabPanels>
+        </div>
+      </div>
     </>
   );
 };
