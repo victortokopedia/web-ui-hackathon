@@ -1,7 +1,6 @@
 import type { ProductCardProps } from '@/components/ProductCard';
 import ProductCard from '@/components/ProductCard';
 import { Grid } from '@nest-ui/core';
-import { wrapper } from './styles';
 
 const products: ProductCardProps[] = [
   {
@@ -217,7 +216,7 @@ const Recommendation = ({ source }: { source: string }) => {
   const span = source === 'lainnya' ? 4 : 2;
 
   return (
-    <Grid align="stretch" gutterX="1rem" gutterY="1rem" id="rekomendasi" css={wrapper}>
+    <Grid align="stretch" gutterX="1rem" gutterY="1rem" id="rekomendasi">
       {data.map(product => (
         <Grid.Col span={span} key={product.id}>
           <ProductCard {...product} />
