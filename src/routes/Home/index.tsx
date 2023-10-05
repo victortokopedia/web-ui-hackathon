@@ -12,7 +12,11 @@ import Preview from './components/Preview';
 import Sidebar from './components/Sidebar';
 import StickyInfo from './components/StickyInfo';
 import Recommendation from './components/Recommendation';
+<<<<<<< HEAD
 import ProductDetails from './components/ProductDetails';
+=======
+import { anotherProductContainer, productSponsorContainer } from './styles';
+>>>>>>> 2e9ec27 (fix: scroll direction)
 
 const Home = () => {
   return (
@@ -100,7 +104,7 @@ const Home = () => {
           </Grid>
         </Container>
       </div>
-      <section>
+      <section css={anotherProductContainer}>
         <Container>
           <Typography as="h2" variant="heading4">
             Lainnya di toko ini
@@ -108,7 +112,7 @@ const Home = () => {
           <Recommendation source="lainnya" />
         </Container>
       </section>
-      <section>
+      <section css={productSponsorContainer}>
         <Container>
           <Typography as="h2" variant="heading4">
             Produk sponsor terkait

@@ -2,11 +2,12 @@ import { css, keyframes } from '@emotion/react';
 import { NN0, NN200 } from '@tokopedia/nest-color';
 
 const fadeIn = keyframes({
-  to: { opacity: 1 },
+  to: { opacity: 1, translate: '0 0' },
 });
 
 export const cssFooter = css({
   marginTop: 50,
+  translate: '0 50px',
   backgroundColor: NN0,
   borderTop: `1px solid ${NN200}`,
   padding: '32px 0',
