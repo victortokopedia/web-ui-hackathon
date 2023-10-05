@@ -43,7 +43,14 @@ const Preview = () => {
           ref={imageRef}
           as="button"
           transparent
-          css={{ display: 'block', width: '100%', border: 'none', outline: 'none', padding: 0 }}
+          css={{
+            display: 'block',
+            width: '100%',
+            border: 'none',
+            outline: 'none',
+            padding: 0,
+            'view-transition-name': 'image',
+          }}
           ratio="1:1"
           src={sources[activeState]}
           alt=""
