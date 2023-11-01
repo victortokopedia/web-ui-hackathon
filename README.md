@@ -13,6 +13,15 @@ This service uses Node 16 and pnpm 7. See [Getting Started](https://tokopedia.at
 
 Read on our [Confluence](https://tokopedia.atlassian.net/wiki/spaces/PL/pages/1810076096/Skipper+-+Web+Framework).
 
+## Deploy To fly.io
+
+From your local machine, make sure already execute `pnpm run build` and `NODE_ENV=production pnpm install --frozen-lockfile --prod && pnpm store prune` before execute commands below:
+
+1. Download binary from https://fly.io/docs/hands-on/install-flyctl/
+2. Login to fly with `flyctl auth login`
+3. Create new resource `fly launch`
+3. Deploy service `fly deploy`
+
 ---
 
 Maintained by WPE, generated on 4/10/2023

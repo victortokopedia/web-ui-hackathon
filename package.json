@@ -6,8 +6,10 @@
   "license": "ISC",
   "author": "Web Platform Engineer",
   "scripts": {
+    "bs": "pnpm install",
     "analyze": "skipper analyze",
     "build": "skipper build",
+    "deploy": "pnpm run bs && pnpm run build && NODE_ENV=production pnpm install --frozen-lockfile --prod && pnpm store prune && fly deploy",
     "dev": "skipper dev",
     "preinstall": "pnpm dlx @lite-v3/locky --silent",
     "prepare": "node ./scripts/husky/install",

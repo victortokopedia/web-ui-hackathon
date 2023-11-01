@@ -14,7 +14,7 @@ pnpm-error.log*
 *.sln
 *.sw?
 
-.env
+# .env
 .skipper
 .DS_Store
 .clinic
